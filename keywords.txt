@@ -1,0 +1,5 @@
+at42qt-acorn   KEYWORD1
+begin   KEYWORD2
+touched KEYWORD2
+keyTouched     KEYWORD2
+setThresholds  KEYWORD2
