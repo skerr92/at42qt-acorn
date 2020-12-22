@@ -1,3 +1,23 @@
+/**
+ * @file ODT_AT42QT1070.h
+ *
+ * This is a library for the AT42QT1070 I2C 7 Key Capacitive Touch Sensor
+ *
+ * Designed specifically to work with the Oak Development Technologies AT42QT1070 Acorn
+ * ----> urlhere
+ *
+ * The sensor uses I2C to communicate with additional pins that can be connected to
+ * for other operational modes.
+ *
+ * Writen by Seth Kerr for Oak Development Technologies
+ *
+ * Please support additional open source libraries and hardware through your purchases
+ * from Oak Development Technologies
+ *
+ * MIT License, can be used, modified, or copied under license terms
+ *
+*/
+
 #ifndef ODT_AT42QT1070_H
 #define ODT_AT42QT1070_H
 
@@ -107,7 +127,8 @@ public:
     uint16_t readRegister16(uint8_t regMSB, uint8_t regLSB);
     uint8_t readRegister8(uint8_t reg);
     void writeRegister8(uint8_t reg, uint8_t value);
-    uint16_t touched(void);
+    bool touched(void);
+    uint8_t keyTouched(void);
     void setNegThreshold(uint8_t reg, uint8_t negVal); // CAN NOT BE ZERO (0)
     void setLowPower(uint8_t value); // will write to the Low Power register directly
 
