@@ -149,7 +149,7 @@ public:
     void writeRegister8(uint8_t reg, uint8_t value);
     bool touched(void);
     uint8_t keyTouched(void);
-    void setNegThreshold(uint8_t reg, uint8_t negVal); // CAN NOT BE ZERO (0)
+    void setNegThreshold(uint8_t reg, uint8_t negVal); // CAN NOT BE ZERO 
     void setLowPower(uint8_t value); // will write to the Low Power register directly
 
 private:
