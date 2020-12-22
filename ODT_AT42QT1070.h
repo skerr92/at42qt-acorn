@@ -104,11 +104,12 @@ public:
 
     bool begin(uint8_t i2caddr = AT42QT1070_ADDRESS, TwoWrite *theWire = &Wire);
 
-    uint16_t readRegister(uint8_t regMSB, uint8_t regLSB);
+    uint16_t readRegister16(uint8_t regMSB, uint8_t regLSB);
     uint8_t readRegister8(uint8_t reg);
-    void writeRegister(uint8_t reg, uint8_t value);
+    void writeRegister8(uint8_t reg, uint8_t value);
     uint16_t touched(void);
     void setNegThreshold(uint8_t reg, uint8_t negVal); // CAN NOT BE ZERO (0)
+    void setLowPower(uint8_t value); // will write to the Low Power register directly
 
 private:
     Adafruit_I2CDevice *i2c_dev = NULL;
