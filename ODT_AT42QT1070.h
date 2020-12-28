@@ -53,7 +53,7 @@ enum chip_info {
 
 enum {
   AT42QT107_KEY_STATUS =
-      (0x03); // BIT 7 Reserved, BIT 6 (KEY 6) | ... | ... | BIT 0 (Key 0)
+      (0x03), // BIT 7 Reserved, BIT 6 (KEY 6) | ... | ... | BIT 0 (Key 0)
   AT42QT107_KEY_0_1 = (0x04), // Most Significant byte
   AT42QT107_KEY_0_2 = (0x05), // Least Significant byte
   AT42QT107_KEY_1_1 = (0x06), // MSByte
