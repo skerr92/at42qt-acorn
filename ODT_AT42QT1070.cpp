@@ -59,6 +59,7 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr, TwoWire *theWire) {
   writeRegister8(AT42QT107_RESET,
                  0x01); // simply write a nonzero number to reset
   delay(1);
+  writeRegister8(AT42QT107_RESET, 0x00);
   for (uint8_t i = 0; i < 0x7f; i++) {
   }
 
@@ -152,7 +153,7 @@ void ODT_AT42QT1070::setNegThreshold(uint8_t reg, uint8_t negVal) {
 bool ODT_AT42QT1070::touched() {
   uint8_t t = readRegister8(AT42QT107_DETECT_STATUS);
   Serial.println(t);
-  if (t & 0x0FFF) {
+  if (t & 0x0F) {
     return true;
   }
   return false;
