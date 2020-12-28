@@ -96,10 +96,10 @@ uint8_t ODT_AT42QT1070::readRegister8(uint8_t reg) {
 uint16_t ODT_AT42QT1070::readRegister16(uint8_t regMSB) {
   uint16_t read16;
   Adafruit_BusIO_Register read_reg1 =
-      Adafruit_BusIO_Register(i2c_dev, regMSB, 1);
+      Adafruit_BusIO_Register(i2c_dev, regMSB, 2);
 
   read_reg1.read(&read16);
-  return (read16); // change to value returned from register
+  return (&read16); // change to value returned from register
 }
 
 /*!
