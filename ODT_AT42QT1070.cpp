@@ -64,8 +64,8 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr, TwoWire *theWire) {
 
   writeRegister8(AT42QT107_CAL, 0x01); // Calibrate the device by writing a non
                                        // zero value to calibration register
-
-  uint8_t curr = readRegister16(AT42QT107_KEY_0_1, AT42QT107_KEY_0_2);
+  // may not need this curr variable...
+  //uint8_t curr = readRegister16(AT42QT107_KEY_0_1, AT42QT107_KEY_0_2);
 }
 
 /*!
@@ -77,7 +77,7 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr, TwoWire *theWire) {
 */
 
 uint8_t ODT_AT42QT1070::readRegister8(uint8_t reg) {
-  Adafruit_BusIO_Register read_reg = Adafruit_BusIO_Register(12c_dev, reg, 1);
+  Adafruit_BusIO_Register read_reg = Adafruit_BusIO_Register(i2c_dev, reg, 1);
 
   return (read_reg.read()); // change to value returned from register
 }
@@ -97,7 +97,7 @@ uint16_t ODT_AT42QT1070::readRegister16(uint8_t regMSB, uint8_t regLSB) {
   Adafruit_BusIO_Register read_reg1 =
       Adafruit_BusIO_Register(i2c_dev, regMSB, 1);
   Adafruit_BusIO_Register read_reg2 =
-      Adagruit_BusIO_Register(i2c_dev, regLSB, 1);
+      Adafruit_BusIO_Register(i2c_dev, regLSB, 1);
 
   read16 = (read_reg1.read()) | (read_reg2.read());
   return (read16); // change to value returned from register
@@ -150,7 +150,7 @@ void ODT_AT42QT1070::setNegThreshold(uint8_t reg, uint8_t negVal) {
 
 bool ODT_AT42QT1070::touched() {
   uint8_t t = readRegister8(AT42QT107_DETECT_STATUS);
-  if (t[0] == 1) {
+  if (t[0] << 7) {
     return true;
   }
   return false;
