@@ -66,6 +66,7 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr, TwoWire *theWire) {
                                        // zero value to calibration register
   // may not need this curr variable...
   //uint8_t curr = readRegister16(AT42QT107_KEY_0_1, AT42QT107_KEY_0_2);
+  return true;
 }
 
 /*!
