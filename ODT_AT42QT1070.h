@@ -146,9 +146,9 @@ public:
   // Hardware I2C
   ODT_AT42QT1070();
 
-  bool begin(uint8_t i2caddr = AT42QT1070_ADDRESS, TwoWire *theWire = &Wire);
+  bool begin(uint8_t i2caddr = 0x1b);
 
-  uint16_t readRegister16(uint8_t regMSB, uint8_t regLSB);
+  uint16_t readRegister16(uint8_t regMSB);
   uint8_t readRegister8(uint8_t reg);
   void writeRegister8(uint8_t reg, uint8_t value);
   bool touched(void);
