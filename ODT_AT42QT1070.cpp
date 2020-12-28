@@ -151,7 +151,7 @@ void ODT_AT42QT1070::setNegThreshold(uint8_t reg, uint8_t negVal) {
 
 bool ODT_AT42QT1070::touched() {
   uint8_t t = readRegister8(AT42QT107_DETECT_STATUS);
-  if (t << 7) {
+  if (t & 0x0F) {
     return true;
   }
   return false;
