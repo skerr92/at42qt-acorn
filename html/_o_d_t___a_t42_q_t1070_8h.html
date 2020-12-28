@@ -88,15 +88,83 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a8894b0caba4920e16d32325cdfe869ce"><td class="memItemLeft" align="right" valign="top"><a id="a8894b0caba4920e16d32325cdfe869ce"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_d_t___a_t42_q_t1070_8h.html#a8894b0caba4920e16d32325cdfe869ce">chip_info</a> { <b>AT42QT107_DETECT_STATUS</b> = (0x02)
+<tr class="memitem:a8894b0caba4920e16d32325cdfe869ce"><td class="memItemLeft" align="right" valign="top"><a id="a8894b0caba4920e16d32325cdfe869ce"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_d_t___a_t42_q_t1070_8h.html#a8894b0caba4920e16d32325cdfe869ce">chip_info</a> { <b>AT42QT107_CHIP_ID</b> = (0x00), 
+<b>AT42QT107_FIRMWARE</b> = (0x01), 
+<b>AT42QT107_DETECT_STATUS</b> = (0x02)
  }<tr class="memdesc:a8894b0caba4920e16d32325cdfe869ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information addresses for the AT42QT1070. <br /></td></tr>
 </td></tr>
 <tr class="separator:a8894b0caba4920e16d32325cdfe869ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top"><a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <b>AT42QT107_RESET</b>
+<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top"><a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<b>AT42QT107_KEY_0_1</b> = (0x04), 
+<b>AT42QT107_KEY_0_2</b> = (0x05), 
+<b>AT42QT107_KEY_1_1</b> = (0x06), 
+<b>AT42QT107_KEY_1_2</b> = (0x07), 
+<br />
+&#160;&#160;<b>AT42QT107_KEY_2_1</b> = (0x08), 
+<b>AT42QT107_KEY_2_2</b> = (0x09), 
+<b>AT42QT107_KEY_3_1</b> = (0x0A), 
+<b>AT42QT107_KEY_3_2</b> = (0x0B), 
+<br />
+&#160;&#160;<b>AT42QT107_KEY_4_1</b> = (0x0C), 
+<b>AT42QT107_KEY_4_2</b> = (0x0D), 
+<b>AT42QT107_KEY_5_1</b> = (0x0E), 
+<b>AT42QT107_KEY_5_2</b> = (0x0F), 
+<br />
+&#160;&#160;<b>AT42QT107_KEY_6_1</b> = (0x10), 
+<b>AT42QT107_KEY_6_2</b> = (0x11), 
+<b>AT42QT107_REF_DATA_0_1</b> = (0x12), 
+<b>AT42QT107_REF_DATA_0_2</b> = (0x13), 
+<br />
+&#160;&#160;<b>AT42QT107_REF_DATA_1_1</b> = (0x14), 
+<b>AT42QT107_REF_DATA_1_2</b> = (0x15), 
+<b>AT42QT107_REF_DATA_2_1</b> = (0x16), 
+<b>AT42QT107_REF_DATA_2_2</b> = (0x17), 
+<br />
+&#160;&#160;<b>AT42QT107_REF_DATA_3_1</b> = (0x18), 
+<b>AT42QT107_REF_DATA_3_2</b> = (0x19), 
+<b>AT42QT107_REF_DATA_4_1</b> = (0x1A), 
+<b>AT42QT107_REF_DATA_4_2</b> = (0x1B), 
+<br />
+&#160;&#160;<b>AT42QT107_REF_DATA_5_1</b> = (0x1C), 
+<b>AT42QT107_REF_DATA_5_2</b> = (0x1D), 
+<b>AT42QT107_REF_DATA_6_1</b> = (0x1E), 
+<b>AT42QT107_REF_DATA_6_2</b> = (0x1F), 
+<br />
+&#160;&#160;<b>AT42QT107_NTHR_K0</b> = (0x20), 
+<b>AT42QT107_NTHR_K1</b> = (0x21), 
+<b>AT42QT107_NTHR_K2</b> = (0x22), 
+<b>AT42QT107_NTHR_K3</b> = (0x23), 
+<br />
+&#160;&#160;<b>AT42QT107_NTHR_K4</b> = (0x24), 
+<b>AT42QT107_NTHR_K5</b> = (0x25), 
+<b>AT42QT107_NTHR_K6</b> = (0x26), 
+<b>AT42QT107_AVE_KS_K0</b> = (0x27), 
+<br />
+&#160;&#160;<b>AT42QT107_AVE_KS_K1</b> = (0x28), 
+<b>AT42QT107_AVE_KS_K2</b> = (0x29), 
+<b>AT42QT107_AVE_KS_K3</b>, 
+<b>AT42QT107_AVE_KS_K4</b> = (0x2B), 
+<br />
+&#160;&#160;<b>AT42QT107_AVE_KS_K5</b> = (0x2C), 
+<b>AT42QT107_AVE_KS_K6</b> = (0x2D), 
+<b>AT42QT107_DI_K0</b> = (0x2E), 
+<b>AT42QT107_DI_K1</b> = (0x2F), 
+<br />
+&#160;&#160;<b>AT42QT107_DI_K2</b> = (0x30), 
+<b>AT42QT107_DI_K3</b>, 
+<b>AT42QT107_DI_K4</b> = (0x32), 
+<b>AT42QT107_DI_K5</b> = (0x33), 
+<br />
+&#160;&#160;<b>AT42QT107_DI_K6</b> = (0x34), 
+<b>AT42QT107_FO_MO_GA</b> = (0x35), 
+<b>AT42QT107_CAL</b> = (0x38), 
+<b>AT42QT107_RESET</b>
+<br />
  }<tr class="memdesc:a06fc87d81c62e9abb8790b6e5713c55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">register addresses for Keys <br /></td></tr>
 </td></tr>
 <tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22b5aae9e6b7757228937af15d907350"><td class="memItemLeft" align="right" valign="top"><a id="a22b5aae9e6b7757228937af15d907350"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_d_t___a_t42_q_t1070_8h.html#a22b5aae9e6b7757228937af15d907350">power_regs</a> { <b>AT42QT107_MAX_ON_DUR</b> = (0x37)
+<tr class="memitem:a22b5aae9e6b7757228937af15d907350"><td class="memItemLeft" align="right" valign="top"><a id="a22b5aae9e6b7757228937af15d907350"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_d_t___a_t42_q_t1070_8h.html#a22b5aae9e6b7757228937af15d907350">power_regs</a> { <b>AT42QT107_LP</b> = (0x36), 
+<b>AT42QT107_MAX_ON_DUR</b> = (0x37)
  }<tr class="memdesc:a22b5aae9e6b7757228937af15d907350"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers that are related to power consumption <br /></td></tr>
 </td></tr>
 <tr class="separator:a22b5aae9e6b7757228937af15d907350"><td class="memSeparator" colspan="2">&#160;</td></tr>
