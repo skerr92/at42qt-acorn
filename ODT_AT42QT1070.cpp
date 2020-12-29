@@ -80,7 +80,7 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr) {
 uint8_t ODT_AT42QT1070::readRegister8(uint8_t reg) {
   Adafruit_BusIO_Register read_reg = Adafruit_BusIO_Register(i2c_dev, reg, 1);
   uint8_t r_val;
-  return (read_reg.read(&r_val, 0x8)); // change to value returned from register
+  return read_reg.read(&r_val, 0x8); // change to value returned from register
 }
 
 /*!
@@ -88,8 +88,6 @@ uint8_t ODT_AT42QT1070::readRegister8(uint8_t reg) {
             This function requests the register contents over i2c.
     @param    regMSB
               Is the MSB register address from where we read from
-    @param    regLSB
-              Is the LSB register address from where we read from
     @return The 16 bit value of the register read is returned.
 */
 
@@ -99,7 +97,7 @@ uint16_t ODT_AT42QT1070::readRegister16(uint8_t regMSB) {
       Adafruit_BusIO_Register(i2c_dev, regMSB, 2);
 
   read_reg1.read(&read16);
-  return (&read16); // change to value returned from register
+  return read16;
 }
 
 /*!
