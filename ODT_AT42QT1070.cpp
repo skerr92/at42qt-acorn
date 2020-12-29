@@ -41,8 +41,6 @@ ODT_AT42QT1070::ODT_AT42QT1070() {}
             after this.
     @param    i2caddr
               Is the register address from where we read from
-    @param    theWire
-              Is the value we want to write to the register specified
     @return No return value.
 */
 
@@ -57,15 +55,11 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr) {
   }
   writeRegister8(AT42QT107_RESET,
                  0x01); // simply write a nonzero number to reset
-  delay(1);
-  writeRegister8(AT42QT107_RESET, 0x00);
   for (uint8_t i = 0; i < 0x7f; i++) {
   }
 
   writeRegister8(AT42QT107_CAL, 0x01); // Calibrate the device by writing a non
                                        // zero value to calibration register
-  // may not need this curr variable...
-  // uint8_t curr = readRegister16(AT42QT107_KEY_0_1, AT42QT107_KEY_0_2);
   return true;
 }
 
@@ -97,7 +91,7 @@ uint16_t ODT_AT42QT1070::readRegister16(uint8_t regMSB) {
       Adafruit_BusIO_Register(i2c_dev, regMSB, 2);
 
   read_reg1.read(&read16);
-  return read16;
+  return (read16);
 }
 
 /*!
