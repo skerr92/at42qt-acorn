@@ -49,7 +49,10 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr) {
     delete i2c_dev;
   }
   i2c_dev = new Adafruit_I2CDevice(i2caddr);
-
+  if (nullptr == i2c_dev) {
+    Serial.println("AT42QT1070 not initialized);
+    return false;
+  }
   if (!i2c_dev->begin()) {
     return false;
   }
@@ -72,7 +75,13 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr) {
 */
 
 uint8_t ODT_AT42QT1070::readRegister8(uint8_t reg) {
-  Adafruit_BusIO_Register read_reg = Adafruit_BusIO_Register(i2c_dev, reg, 1);
+  if (nullptr == i2c_Dev) {
+    Serial.println("AT42QT1070 not initialized");
+    return (0xf);
+  }
+  else {
+    Adafruit_BusIO_Register read_reg = Adafruit_BusIO_Register(i2c_dev, reg, 1);
+  }
   uint8_t r_val;
   return read_reg.read(&r_val, 0x8); // change to value returned from register
 }
@@ -87,9 +96,14 @@ uint8_t ODT_AT42QT1070::readRegister8(uint8_t reg) {
 
 uint16_t ODT_AT42QT1070::readRegister16(uint8_t regMSB) {
   uint16_t read16;
-  Adafruit_BusIO_Register read_reg1 =
-      Adafruit_BusIO_Register(i2c_dev, regMSB, 2);
-
+  if (nullptr == i2c_dev) {
+    Serial.println("AT42QT1070 not initialized");
+    return (0xff);
+  }
+  else {
+    Adafruit_BusIO_Register read_reg1 =
+        Adafruit_BusIO_Register(i2c_dev, regMSB, 2);
+  }
   read_reg1.read(&read16);
   return (read16);
 }
@@ -104,8 +118,13 @@ uint16_t ODT_AT42QT1070::readRegister16(uint8_t regMSB) {
 */
 
 void ODT_AT42QT1070::writeRegister8(uint8_t reg, uint8_t value) {
-
-  Adafruit_BusIO_Register write_reg = Adafruit_BusIO_Register(i2c_dev, reg, 1);
+  if (nullptr == i2c_dev) {
+    Serial.println("AT42QT1070 not initialized");
+    return;
+  }
+  else {
+    Adafruit_BusIO_Register write_reg = Adafruit_BusIO_Register(i2c_dev, reg, 1);
+  }
   write_reg.write(value, 0x8);
 }
 
