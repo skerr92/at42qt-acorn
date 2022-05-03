@@ -50,7 +50,7 @@ bool ODT_AT42QT1070::begin(uint8_t i2caddr) {
   }
   i2c_dev = new Adafruit_I2CDevice(i2caddr);
   if (nullptr == i2c_dev) {
-    Serial.println("AT42QT1070 not initialized);
+    Serial.println("AT42QT1070 not initialized");
     return false;
   }
   if (!i2c_dev->begin()) {
